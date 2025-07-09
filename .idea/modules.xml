@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sm25springs.iml" filepath="$PROJECT_DIR$/sm25springs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sm25spring.iml" filepath="$PROJECT_DIR$/sm25spring.iml" />
     </modules>
   </component>
 </project>
