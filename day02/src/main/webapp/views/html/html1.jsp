@@ -12,7 +12,12 @@
         <strong>Success!</strong> Alert create successful!
     </div>
 
-    <button type="button" class="btn btn-primary btn-block" >로그인</button>
     <a href="/html" class="btn btn-primary btn-block">html</a>
+    <button class="btn btn-primary btn-block">
+        <span class="spinner-border spinner-border-sm"></span>
+        Loding...
+    </button>
+
+    <div class="spinner-border"></div>
 
 </div>
