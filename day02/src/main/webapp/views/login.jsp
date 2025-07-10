@@ -10,14 +10,13 @@
         <div class="col-sm-8">
             <form action="/loginimpl" method="post">
                 <div class="form-group">
-                    <label for="email">Id:</label>
+                    <label for="id">Id:</label>
                     <input type="text" class="form-control" placeholder="Enter id" id="id" name="id">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
                     <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="pwd">
                 </div>
-
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

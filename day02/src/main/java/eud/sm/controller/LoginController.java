@@ -26,11 +26,4 @@ public class LoginController {
         log.info("id:{} PWD:{} ", id, pwd);
         return "index";
     }
-
-    @RequestMapping("/register")
-    public String register(Model model) {
-        model.addAttribute("center", "register");
-
-        return "index";
-    }
 }
