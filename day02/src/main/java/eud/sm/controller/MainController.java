@@ -12,9 +12,16 @@ public class MainController {
     @RequestMapping("/")
     public String main(Model model) {
         log.info("start main1 ....");
-        log.info("start main2 ....");
-        log.info("start main3 ....");
 
         return "index";
     }
+
+    @RequestMapping("/about")
+    public String about(Model model) {
+        model.addAttribute("left", "aboutleft");
+        model.addAttribute("center", "about");
+
+        return "index";
+    }
+
 }
