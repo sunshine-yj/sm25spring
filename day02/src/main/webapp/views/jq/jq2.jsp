@@ -29,7 +29,7 @@
                 $('#pwd').focus();
                 return;
             }
-            if (pwd === cp_pwd){
+            if (!(pwd === cp_pwd)){
 
                 $('#cp_pwd_desc').html('비밀번호가 틀렸습니다.');
                 $('#cp_pwd').focus();
