@@ -16,6 +16,7 @@
             let nickname = $('#nickname').val();
             let ad_choose = $('#ad_choose').val();
             let im_choose = $('#im_choose').val();
+            //let all_choose = $('#all_choose').val();
             if (id == '') {
 
                 alert('ID는 필수 항목 입니다.');
@@ -28,7 +29,7 @@
                 $('#pwd').focus();
                 return;
             }
-            if (pwd == cp_pwd){
+            if (pwd === cp_pwd){
 
                 $('#cp_pwd_desc').html('비밀번호가 틀렸습니다.');
                 $('#cp_pwd').focus();
@@ -64,6 +65,10 @@
                 $('#im_choose').focus();
                 return;
             }
+            // if (all_choose == 1){
+            //     ad_choose = 1;
+            //     im_choose = 1;
+            // }
             this.send();
         },
         send: function () {
@@ -142,7 +147,11 @@
         <br>
         <br>
         <p> 전체 동의하기</p>
-        <br>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" value="1" name="all_choose">전체 동의
+            </label>
+        </div>
         <hr>
         <br>
         <button type="button" class="btn btn-primary">Create</button>
