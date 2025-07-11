@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%-- Login --%>
+<%-- About --%>
 <div class="col-sm-9">
 
     <h2>About Page</h2>
@@ -54,14 +54,16 @@
                 <input type="checkbox" class="form-check-input" id="check2" name="hobby" value="3">Coding
             </label>
         </div>
+        <hr>
+
         <!-- Select -->
         <div class="form-group">
-            <label for="sel1">Select list:</label>
+            <label for="sel1">Select Car list:</label>
             <select class="form-control" id="sel1" name="car">
-                <option value="K1">K1</option>
-                <option value="K1">K2</option>
-                <option value="K1">K3</option>
-                <option value="K1">K4</option>
+                <option value="K3">K3</option>
+                <option value="K5">K5</option>
+                <option value="K7">K7</option>
+                <option value="K9">K9</option>
             </select>
         </div>
         <hr>

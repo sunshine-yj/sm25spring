@@ -71,6 +71,7 @@
             <c:otherwise>
                 <jsp:include page="${left}.jsp"/>
             </c:otherwise>
+
         </c:choose>
 
         <%--      Center Menu      --%>
