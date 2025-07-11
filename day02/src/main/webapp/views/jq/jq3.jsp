@@ -4,7 +4,6 @@
 <%-- Center --%>
 <div class="col-sm-9">
 
-    <h2>JQ3 CENTER HEADING</h2>
-    <h5>jq3 center</h5>
+    <h2>김유진의 홈페이지</h2>
 
 </div>

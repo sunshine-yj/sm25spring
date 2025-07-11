@@ -28,11 +28,13 @@
                 let id = datas[i].id;
                 let name = datas[i].name;
                 let age = datas[i].age;
-                txt += '<p>';
-                txt += id + ' ' + name + ' ' + age;
-                txt += '</p>';
+                txt += '<tr>';
+                txt += '<td>' + id + '</td>';
+                txt += '<td>' + name + '</td>';
+                txt += '<td>' + age + '</td>';
+                txt += '</tr>';
             }
-            document.querySelector('#resualts').innerHTML = txt;
+            document.querySelector('#cust_data').innerHTML = txt;
         }
     }
     // function display() {
@@ -54,30 +56,16 @@
 
     <h2>JS2 CENTER HEADING</h2>
     <button type="button" class="btn btn-primary">Primary</button>
-    <table class="table table-striped">
+    <table id="cust_table" class="table table-striped">
         <thead>
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-        </tr>
-        <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-        </tr>
-        <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-        </tr>
+        <tbody id="cust_data">
+
         </tbody>
     </table>
 

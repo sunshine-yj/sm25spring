@@ -23,7 +23,7 @@
             this.display(datas);
         },
         display:function (datas) {
-            let txt = 'Results';
+            let txt = '';
             for (let i = 0; i < datas.length; i++) {
                 let id = datas[i].id;
                 let name = datas[i].name;
@@ -53,7 +53,7 @@
 <div class="col-sm-9">
 
     <h2>JS1 CENTER HEADING</h2>
-    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-primary" id="getdata">Primary</button>
     <div id="resualts" >
 
     </div>
