@@ -12,5 +12,5 @@ import lombok.NoArgsConstructor;
 public class HotItem {
     private int cnt;
     private String title;
-    private String updown;
+    private int updown;
 }
