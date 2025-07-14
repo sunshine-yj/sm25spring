@@ -17,14 +17,18 @@
     let center = {
         init:function() {
             let url = '/getdata';
-            $.ajax({
-                url:url,
-                success:(data)=>{
-                    console.log(date);
-                    this.display(data);
-            },
-                error:()=>{}
-            });
+
+            setInterval(()=>{
+                $.ajax({
+                    url:url,
+                    success:(data)=>{
+                        console.log(data);
+                        this.display(data);
+                    },
+                    error:()=>{}
+                });
+            }, 10000);
+
         },
         display:(data)=>{
             // JSON [{}, {}]
