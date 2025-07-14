@@ -37,7 +37,7 @@
                 let cnt = item.cnt;
                 let title = item.title;
                 let updown = item.updown;
-                result += '<p>' + cnt + ' ' + title + ' ' + updown + '</p>';
+                result += '<p>' + cnt + ' ' + title + '<img src="'+updown+'"alt="up/down" width="20"/></p>';
             });
             $('#results').html(result);
         }
