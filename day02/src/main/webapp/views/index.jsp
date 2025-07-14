@@ -23,6 +23,14 @@
             init:function () {
                 let url ='/gettime';
 
+                $.ajax({
+                    url:url,
+                    success:(data)=>{
+                        $('#ctime').text(data);
+                    },
+                    error:()=>{}
+                });
+
                 setInterval(()=>{
                     $.ajax({
                         url:url,
