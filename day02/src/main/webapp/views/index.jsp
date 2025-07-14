@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
@@ -16,6 +17,29 @@
             background: #aaa;
         }
     </style>
+
+    <script>
+        let index = {
+            init:function () {
+                let url ='/gettime';
+
+                setInterval(()=>{
+                    $.ajax({
+                        url:url,
+                        success:(data)=>{
+                            $('#ctime').text(data);
+                        },
+                        error:()=>{}
+                    });
+                }, 2000);
+
+            }
+        }
+        $().ready(()=>{
+            index.init();
+        });
+    </script>
+
 </head>
 <body>
 <ul class="nav justify-content-end">
@@ -36,6 +60,7 @@
 <div class="jumbotron text-center" style="margin-bottom:0">
     <h1>HTML5 & JavaScript</h1>
     <p>JavaScript, HTML5, CSS, jQuery, AJAX</p>
+    <p id="ctime"></p>
 </div>
 <%----%>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -56,6 +81,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/jq">JQuery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/ajax">AJAX</a>
             </li>
         </ul>
     </div>
