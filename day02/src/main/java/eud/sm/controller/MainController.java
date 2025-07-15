@@ -6,6 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -58,7 +61,18 @@ public class MainController {
 
     @RequestMapping("/wt")
     public String wt(Model model) {
+        String cleanedDateTime = "2025-07-15T14:30";
+
+        SimpleDateFormat isoFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+        Date parsedDateTime = null;
+        try {
+            parsedDateTime = isoFormat.parse(cleanedDateTime);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
         model.addAttribute("center", "wt");
+        model.addAttribute("parsedDateTime", parsedDateTime);
         return "index";
     }
 
