@@ -17,6 +17,12 @@
         width: 20px;
         height: 25px;
     }
+
+    #wh1 {
+        width: 500px;
+        border: 2px solid greenyellow;
+    }
+
 </style>
 
 <script>
@@ -44,7 +50,42 @@
                 });
             }, 10000);
 
+
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth() + 1;
+            let day = date.getDate();
+
+            if(month < 10){
+                month = '0'+month;
+            }
+            if(day < 10){
+                day = '0'+day;
+            }
+
+            let today = year+''+month+''+day+'0600';
+
+            let wh1Url = 'http://apis.data.go.kr/1360000/MidFcstInfoService/getMidFcst'; /*URL*/
+            let queryParams = '?' + encodeURIComponent('serviceKey') + '='+'VBW8uhXgyKAauuCP87mKsvrC9zB38NHbAsM5asJVN9tBFuT9PeFfa%2BFYHpM3z69wprsEQnJsU5kdEzD%2BBwezaA%3D%3D';
+            queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+            queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /**/
+            queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
+            queryParams += '&' + encodeURIComponent('stnId') + '=' + encodeURIComponent('108'); /**/
+            queryParams += '&' + encodeURIComponent('tmFc') + '=' + encodeURIComponent(today); /**/
+
+
+            $.ajax({
+                url: wh1Url+queryParams,
+                success:(data)=>{
+                    console.log(data);
+                    let wh1Data = data.response.body.items.item[0].wfSv;
+                    $('#wh1').text(wh1Data);
+                }
+            });
+
         },
+
+
         // 데이터 출력
         display:(data)=>{
             // JSON [{}, {}]
@@ -58,6 +99,7 @@
             });
             $('#results').html(result);
         }
+
     }
     $().ready(()=>{
        center.init();
@@ -67,8 +109,7 @@
 <%-- Center --%>
 <div class="col-sm-7">
     <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <img src="/img/bg1.jpg" alt="background1" id="img">
+    <div class="wh" id="wh1"></div>
 </div>
 <%-- Right --%>
 <div class="col-sm-3">
