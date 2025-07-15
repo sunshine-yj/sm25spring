@@ -10,6 +10,8 @@ public class AjaxController {
 
     String dir = "ajax/";
 
+
+
     @RequestMapping("/ajax")
     public String css(Model model) {
         model.addAttribute("left", dir+"left");

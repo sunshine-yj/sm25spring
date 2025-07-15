@@ -8,6 +8,24 @@
 <script>
     let jq_center = {
         init:function(){
+            $('#id').keyup(()=>{
+                let inputTxt = $('#id').val();
+                if (inputTxt.length >= 3){
+                    console.log("Input Text:"+inputTxt);
+                    $.ajax({
+                        url:'/checkid',
+                        data: {id:inputTxt},
+                        success:(result)=>{
+                            console.log('Result: '+result);
+                            if (result == "1") {
+                                $('#sid').text('사용할 수 있는 ID 입니다');
+                            } else {
+                                $('#sid').text('사용할 수 없는 ID 입니다');
+                            }
+                        }
+                    });
+                }
+            });
             $('#allcheck').click(()=>{
                 let checked = $('#allcheck').is(':checked');
                 console.log(checked);

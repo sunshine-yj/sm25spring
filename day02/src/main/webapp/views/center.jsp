@@ -2,11 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <style>
+    <%--  메인 이미지  --%>
     #img {
         width: 500px;
         height: 300px;
     }
-
+    /**/
     #results {
         width: 170px;
         border: 2px solid black;
