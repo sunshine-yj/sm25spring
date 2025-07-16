@@ -1,13 +1,13 @@
-package eud.sm;
+package edu.sm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Day012Application {
+public class Day011Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Day012Application.class, args);
+        SpringApplication.run(Day011Application.class, args);
     }
 
 }

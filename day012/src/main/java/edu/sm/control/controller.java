@@ -1,4 +1,4 @@
-package eud.sm.control;
+package edu.sm.control;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
