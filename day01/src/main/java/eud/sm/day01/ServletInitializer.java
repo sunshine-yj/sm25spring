@@ -1,4 +1,4 @@
-package edu.sm.day01;
+package eud.sm.day01;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
