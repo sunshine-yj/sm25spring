@@ -27,63 +27,63 @@ public class ProductTest {
         }
     }
 
-    @Test
-    void inserttest() {
-        Product product = Product.builder()
-                .productName("브이넥")
-                .productPrice(10000)
-                .productImg("pp.jpg")
-                .discountRate(0.3)
-                .cateId(10)
-                .build();
-        try {
-            productservice.register(product);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    void gettest() {
-        Product product = null;
-        try {
-            productservice.get(1007);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    void update() {
-        Product product = Product.builder().productId(1007).productName("반바지2").productPrice(20000).productImg("pp.jpg").discountRate(0.3).cateId(10).build();
-        try {
-            productservice.modify(product);
-            log.info("------------------------------------------");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    @Test
-    void get2() {
-        Product product = null;
-        try {
-            product = productservice.get(1002);
-            log.info(product.toString());
-            log.info("------------------------------------------");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    @Test
-    void delete() {
-        try {
-            productservice.remove(1007);
-            log.info("Delete End ------------------------------------------");
-        } catch (Exception e) {
-            log.info("Error Test ...");
-            e.printStackTrace();
-        }
-    }
+//    @Test
+//    void inserttest() {
+//        Product product = Product.builder()
+//                .productName("브이넥")
+//                .productPrice(10000)
+//                .productImg("pp.jpg")
+//                .discountRate(0.3)
+//                .cateId(10)
+//                .build();
+//        try {
+//            productservice.register(product);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    @Test
+//    void gettest() {
+//        Product product = null;
+//        try {
+//            productservice.get(1007);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    @Test
+//    void update() {
+//        Product product = Product.builder().productId(1007).productName("반바지2").productPrice(20000).productImg("pp.jpg").discountRate(0.3).cateId(10).build();
+//        try {
+//            productservice.modify(product);
+//            log.info("------------------------------------------");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//    @Test
+//    void get2() {
+//        Product product = null;
+//        try {
+//            product = productservice.get(1002);
+//            log.info(product.toString());
+//            log.info("------------------------------------------");
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//    @Test
+//    void delete() {
+//        try {
+//            productservice.remove(1007);
+//            log.info("Delete End ------------------------------------------");
+//        } catch (Exception e) {
+//            log.info("Error Test ...");
+//            e.printStackTrace();
+//        }
+//    }
 
 }

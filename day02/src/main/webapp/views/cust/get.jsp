@@ -4,7 +4,23 @@
 <%-- Center --%>
 <div class="col-sm-9">
 
-    <h2>JS CENTER HEADING</h2>
-    <h5>js center</h5>
-
+    <h2>Cust Get Page</h2>
+    <table class="table table-striped table-header">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pwd</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="c" items="${clist}">
+                <tr>
+                    <td>${c.custId}</td>
+                    <td>${c.custPwd}</td>
+                    <td>${c.custName}</td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
 </div>

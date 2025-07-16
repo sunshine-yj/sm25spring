@@ -7,10 +7,10 @@
   <p>CUST Left Menu</p>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="/cust">Cust</a>
+      <a class="nav-link" href="/cust/add">add</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="product">Product</a>
+      <a class="nav-link" href="/cust/get">get</a>
     </li>
 
   </ul>
