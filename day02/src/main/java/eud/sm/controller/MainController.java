@@ -1,5 +1,8 @@
 package eud.sm.controller;
 
+import eud.sm.dto.Cust;
+import eud.sm.service.CustService;
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,11 +18,38 @@ import java.util.List;
 @Slf4j
 public class MainController {
 
+    private final CustService custService;
+
+    public MainController(CustService custService) {
+        this.custService = custService;
+    }
+
     @RequestMapping("/")
     public String main(Model model) {
         log.info("start main1 ....");
 
         return "index";
+    }
+
+    @RequestMapping("/register")
+    public String register(Model model) {
+        model.addAttribute("left", "left");
+        model.addAttribute("center", "register");
+        return "index";
+    }
+
+    @RequestMapping("/mainregisterimpl")
+    public String mainregisterimpl(Model model, Cust cust,  HttpSession session) throws Exception {
+        log.info("{},{},{}", cust.getCustPwd(), cust.getCustName(), cust.getCustId());
+        try {
+            custService.register(cust);
+            session.setAttribute("logincust", cust);
+        }
+        catch (Exception e) {
+            return "redirect:/register";
+        }
+
+        return "redirect:/";
     }
 
     @RequestMapping("/about")
@@ -30,12 +60,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/register")
-    public String register(Model model) {
-        model.addAttribute("left", "aboutleft");
-        model.addAttribute("center", "about");
-        return "index";
-    }
 
     @RequestMapping("/registertestimpl")
     // ?id=aaaaa&pwd=xxxxx

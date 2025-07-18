@@ -17,11 +17,12 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/next")
+    @RequestMapping("/product")
     public String next(Model model) {
         log.info("start next ....");
+        model.addAttribute("product");
 
-        return "next";
+        return "index";
     }
 
     @RequestMapping("/third")

@@ -13,16 +13,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         .fakeimg {
-            height: 200px;
+            height: 150px;
             background: #aaa;
         }
     </style>
-
     <script>
         let index = {
-            init:function () {
-                let url ='/gettime';
-
+            init:function(){
+                let url = '/gettime';
                 $.ajax({
                     url:url,
                     success:(data)=>{
@@ -30,7 +28,6 @@
                     },
                     error:()=>{}
                 });
-
                 setInterval(()=>{
                     $.ajax({
                         url:url,
@@ -40,50 +37,51 @@
                         error:()=>{}
                     });
                 }, 1000);
+
             }
         }
         $().ready(()=>{
             index.init();
         });
-    </script>
 
+    </script>
 </head>
 <body>
 <ul class="nav justify-content-end">
 
     <c:choose>
-    <c:when test="${sessionScope.loginid == null}">
-        <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/register">Register</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/about">About Us</a>
-        </li>
-    </c:when>
-    <c:otherwise>
-        <li class="nav-item">
-            <a class="nav-link" href="/info">${sessionScope.loginid}</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
-        </li>
-    </c:otherwise>
+        <c:when test="${sessionScope.logincust == null}">
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About Us</a>
+            </li>
+        </c:when>
+        <c:otherwise>
+            <li class="nav-item">
+                <a class="nav-link" href="/info">${sessionScope.logincust.custName}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </c:otherwise>
     </c:choose>
 
-    <%--    <li class="nav-item">--%>
-    <%--        <a class="nav-link disabled" href="#">Disabled</a>--%>
-    <%--    </li>--%>
+
 </ul>
-<%-- header --%>
+<%-- Header Start --%>
 <div class="jumbotron text-center" style="margin-bottom:0">
     <h1>HTML5 & JavaScript</h1>
-    <p>JavaScript, HTML5, CSS, jQuery, AJAX</p>
+    <p>HTML5, CSS, JavaScript, jQuery, AJAX</p>
     <p id="ctime"></p>
 </div>
-<%----%>
+<%-- Header End --%>
+
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="/">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -106,23 +104,21 @@
             <li class="nav-item">
                 <a class="nav-link" href="/ajax">AJAX</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cust">Cust</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/product">Product</a>
+            </li>
 
-            <c:if test="${sessionScope.loginid != null}">
-                <li class="nav-item">
-                    <a class="nav-link" href="/cust">Cust</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/product">Product</a>
-                </li>
-            </c:if>
 
         </ul>
     </div>
 </nav>
 
-<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+<div class="container" style="margin-top:30px; margin-bottom: 30px;">
     <div class="row">
-        <%--    Left Menu    --%>
+        <%-- Left Menu Start ........  --%>
         <c:choose>
             <c:when test="${left == null}">
                 <jsp:include page="left.jsp"/>
@@ -130,10 +126,9 @@
             <c:otherwise>
                 <jsp:include page="${left}.jsp"/>
             </c:otherwise>
-
         </c:choose>
 
-        <%--      Center Menu      --%>
+        <%-- Left Menu End ........  --%>
         <c:choose>
             <c:when test="${center == null}">
                 <jsp:include page="center.jsp"/>
@@ -142,11 +137,14 @@
                 <jsp:include page="${center}.jsp"/>
             </c:otherwise>
         </c:choose>
+        <%-- Center Start ........  --%>
+
+        <%-- Center End ........  --%>
     </div>
 </div>
 
-<div class="jumbotron text-center" style="background-color: black; margin-bottom:0; max-height: 10px">
-    <p></p>
+<div class="text-center" style="background-color:black; color: white; margin-bottom:0; max-height: 50px;">
+    <p>Footer</p>
 </div>
 
 </body>
