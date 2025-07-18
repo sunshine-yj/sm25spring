@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -31,10 +32,29 @@ public class Productcontroller {
         model.addAttribute("center", dir+"add");
         return "index";
     }
+    @RequestMapping("/delete")
+    public String delete(Model model, @RequestParam("id") int id) throws Exception {
+        productService.remove(id);
+        return "/product/get";
+    }
+    @RequestMapping("/detail")
+    public String detail(Model model, @RequestParam("id") int id) throws Exception {
+        Product product = null;
+        product = productService.get(id);
+        model.addAttribute("p", product);
+        model.addAttribute("left", dir+"left");
+        model.addAttribute("center", dir+"detail");
+        return "index";
+    }
     @RequestMapping("/registerimpl")
     public String registerimpl(Model model, Product product) throws Exception {
         productService.register(product);
         return "redirect:/product/get";
+    }
+    @RequestMapping("/updateimpl")
+    public String updateimpl(Model model, Product product) throws Exception {
+        productService.modify(product);
+        return "redirect:/product/detail?id="+product.getProductId();
     }
     @RequestMapping("/get")
     public String get(Model model) throws Exception {
@@ -46,5 +66,4 @@ public class Productcontroller {
         model.addAttribute("center", dir+"get");
         return "index";
     }
-
 }

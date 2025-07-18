@@ -54,6 +54,7 @@ public class CustController {
         model.addAttribute("center", dir+"add");
         return "index";
     }
+
     @RequestMapping("/get")
     public String get(Model model) throws Exception {
         List<Cust> list = null;

@@ -105,6 +105,9 @@
                 <a class="nav-link" href="/ajax">AJAX</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/productItem">Productitem</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/cust">Cust</a>
             </li>
             <li class="nav-item">

@@ -25,7 +25,7 @@
         <c:forEach var="p" items="${plist}">
             <tr>
                 <td><img src="/img/${p.productImg}"></td>
-                <td>${p.productId}</td>
+                <td><a href="/product/detail?id=${p.productId}">${p.productId}</a></td>
                 <td>${p.productName}</td>
                 <td><fmt:formatNumber type="number" pattern="###,###원" value="${p.productPrice}" /></td>
                 <td>${p.discountRate}</td>
