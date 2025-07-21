@@ -4,7 +4,10 @@
 <%-- Center --%>
 <div class="col-sm-9">
 
-    <h2>CUST CENTER HEADING</h2>
+    <h2>PRPDUCT CENTER HEADING</h2>
     <h5>js center</h5>
+    <img src="/img/ss1.jpg">
+    <hr>
+    <img src="/imgs/ss2.jpg">
 
 </div>
