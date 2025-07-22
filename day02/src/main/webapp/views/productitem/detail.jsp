@@ -9,6 +9,7 @@
                 if(c == true){
                     $('#product_update_form').attr('method', 'post');
                     $('#product_update_form').attr('action','/productitem/updateimpl');
+                    $('#product_update_form').attr('enctype','multipart/form-data');
                     $('#product_update_form').submit();
                 }
             });
@@ -28,7 +29,7 @@
 <div class="col-sm-9">
     <h2>Product Detail Page</h2>
     <form id="product_update_form">
-        <img src="/img/${p.productImg}">
+        <img src="/imgs/${p.productImg}">
         <div class="form-group">
             <label for="id">Id:</label>
             <p id="id">${p.productId}</p>
@@ -46,15 +47,12 @@
             <label for="rate">Discount Rate:</label>
             <input type="text" class="form-control" value="${p.discountRate}" id="rate" name="discountRate">
         </div>
-<%--        <div class="form-group">--%>
-<%--            <label for="pimg">Product Image:</label>--%>
-<%--            <input type="text" readonly class="form-control" value="${p.productImg}" id="pimg" name="productImg">--%>
-<%--        </div>--%>
 
+        <input type="hidden" value="${p.productImg}" name="productImg">
 
         <div class="form-group">
             <label for="newpimg">New Product Image:</label>
-            <input type="file" class="form-control" value="${p.productImg}" id="newpimg" name="productImgFile">
+            <input type="file" class="form-control" id="newpimg" name="productImgFile">
         </div>
         <div class="form-group">
             <label for="cate">Cate Id:</label>

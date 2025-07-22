@@ -6,8 +6,8 @@
     <c:when test="${sessionScope.logincust.custId == 'admin'}">
         <div class="col-sm-3">
             <p>Admin Menu</p>
-            <p><a href="/productitem/get">Get</a> </p>
-            <p><a href="/productitem/add">add</a> </p>
+            <p><a href="/productitem/get">Get</a></p>
+            <p><a href="/productitem/add">Add</a></p>
         </div>
     </c:when>
     <c:otherwise>

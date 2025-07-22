@@ -19,51 +19,54 @@ public class Productcontroller {
 
     final ProductService productService;
 
-    String dir = "product/";
+    String dir = "productitem/";
+
     @RequestMapping("")
-    public String product(Model model) {
-        model.addAttribute("left", dir+"left");
-        model.addAttribute("center", dir+"center");
+    public String login(Model model) {
+        model.addAttribute("left",dir+"left");
+        model.addAttribute("center",dir+"center");
         return "index";
     }
-    @RequestMapping("/add")
-    public String add(Model model) {
-        model.addAttribute("left", dir+"left");
-        model.addAttribute("center", dir+"add");
+    @RequestMapping("/get")
+    public String get(Model model) throws Exception {
+        List<Product> list = null;
+        list = productService.get();
+        model.addAttribute("plist",list);
+        model.addAttribute("left",dir+"left");
+        model.addAttribute("center",dir+"get");
         return "index";
-    }
-    @RequestMapping("/delete")
-    public String delete(Model model, @RequestParam("id") int id) throws Exception {
-        productService.remove(id);
-        return "/product/get";
     }
     @RequestMapping("/detail")
     public String detail(Model model, @RequestParam("id") int id) throws Exception {
         Product product = null;
         product = productService.get(id);
-        model.addAttribute("p", product);
-        model.addAttribute("left", dir+"left");
-        model.addAttribute("center", dir+"detail");
+        model.addAttribute("p",product);
+        model.addAttribute("left",dir+"left");
+        model.addAttribute("center",dir+"detail");
         return "index";
     }
-    @RequestMapping("/registerimpl")
-    public String registerimpl(Model model, Product product) throws Exception {
-        productService.register(product);
-        return "redirect:/product/get";
+    @RequestMapping("/delete")
+    public String delete(Model model,@RequestParam("id") int id) throws Exception {
+        productService.remove(id);
+        return "redirect:/productitem/get";
+    }
+    @RequestMapping("/add")
+    public String add(Model model) {
+        model.addAttribute("left",dir+"left");
+        model.addAttribute("center",dir+"add");
+        return "index";
     }
     @RequestMapping("/updateimpl")
     public String updateimpl(Model model, Product product) throws Exception {
         productService.modify(product);
-        return "redirect:/product/detail?id="+product.getProductId();
+        return "redirect:/productitem/detail?id="+product.getProductId();
     }
-    @RequestMapping("/get")
-    public String get(Model model) throws Exception {
-        List<Product> list = null;
-
-        list = productService.get();
-        model.addAttribute("plist", list);
-        model.addAttribute("left", dir+"left");
-        model.addAttribute("center", dir+"get");
-        return "index";
+    @RequestMapping("/addimpl")
+    public String addimpl(Model model, Product product) throws Exception {
+        log.info("Input Date {},{}",
+                product.getProductName(),
+                product.getProductImgFile().getOriginalFilename());
+        productService.register(product);
+        return "redirect:/productitem/get";
     }
 }

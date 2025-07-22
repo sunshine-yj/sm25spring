@@ -27,5 +27,5 @@ logging:
 
 app:
   dir:
-    imgsdir: file:///C:/project/imgs/     # 화면 출력 용
-    uploadimgsdir: C:/Javaprogram/sm25springs/imgs/  # 파일 Write 용
+    imgsdir: file:///C:/Javaprogram/sm25springs/imgs/
+    uploadimgsdir: C:/Javaprogram/sm25springs/imgs/

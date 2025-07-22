@@ -11,11 +11,11 @@
             <form action="/loginimpl" method="post">
                 <div class="form-group">
                     <label for="id">Id:</label>
-                    <input type="text" value="id01" class="form-control" placeholder="Enter id" id="id" name="id">
+                    <input type="text" value="admin" class="form-control" placeholder="Enter id" id="id" name="id">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" value="pwd01" class="form-control" placeholder="Enter password" id="pwd" name="pwd">
+                    <input type="password" value="111111" class="form-control" placeholder="Enter password" id="pwd" name="pwd">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
