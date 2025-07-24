@@ -10,7 +10,8 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CustService implements SmService <Cust, String> {
+public class CustService implements SmService<Cust, String> {
+
     final CustRepository custRepository;
 
     @Override

@@ -39,6 +39,15 @@ public class ProductItemController {
         model.addAttribute("center",dir+"get");
         return "index";
     }
+    @RequestMapping("/see")
+    public String see(Model model, @RequestParam("id") int id) throws Exception {
+        Product product = null;
+        product = productService.get(id);
+        model.addAttribute("p",product);
+        model.addAttribute("left",dir+"left");
+        model.addAttribute("center",dir+"see");
+        return "index";
+    }
     @RequestMapping("/detail")
     public String detail(Model model, @RequestParam("id") int id) throws Exception {
         Product product = null;

@@ -1,11 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <style>
     #img {
         width: 350px;
         height: 400px;
     }
 </style>
+
+
 
 
 <c:choose>
@@ -24,8 +27,8 @@
                     <img class="card-img-top" src="/imgs/${p.productImg}" alt="Card image" id="img">
                     <div class="card-body">
                         <h4 class="card-title">${p.productName}</h4>
-                        <p class="card-tex t"${p.productPrice}>
-                        <a href="#" class="btn btn-primary">See Profile</a>
+                        <p class="card-text"${p.productPrice}><fmt:formatNumber type="number" pattern="###,###원" value="${p.productPrice}"/></p>
+                        <a href="/productitem/see?id=${p.productId}" class="btn btn-primary">See</a>
                     </div>
                 </div>
                 </c:forEach>

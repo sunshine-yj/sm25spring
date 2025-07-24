@@ -24,7 +24,7 @@
         <div class="col-sm-4">
             <c:choose>
                 <c:when test="${loginstate == 'fail'}">
-                    <h3>로그인 실패!</h3>
+                    <h3>로그인 실패!!</h3>
                 </c:when>
                 <c:otherwise>
                     <h3>ID와 PWD를 입력하세요</h3>
